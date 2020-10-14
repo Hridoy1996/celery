@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app1',
     'app2',
     'flower',
+    'django_celery_results',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,9 +134,6 @@ CELERY_BEAT_SCHEDULE = {
         "task": "task1.tasks.add",
         "schedule": 5.0,
         "args": (10, 10),
-    },
-    "database": {
-        "task": "task3.tasks.bkup",
-        "schedule": 5.0,
-    },
+    }
 }
+CELERY_RESULT_BACKEND = 'django-db'
