@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app1'
+    'app1',
+    'app2',
+    'flower',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -119,3 +120,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'tareqmahmudhridoy@gmail.com'
+EMAIL_HOST_PASSWORD = 'ufsfgbmahjndcrao'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'tareqmahmudhridoy@gmail.com'
+
+CELERY_BEAT_SCHEDULE = {
+    "scheduled_task": {
+        "task": "task1.tasks.add",
+        "schedule": 5.0,
+        "args": (10, 10),
+    },
+    "database": {
+        "task": "task3.tasks.bkup",
+        "schedule": 5.0,
+    },
+}

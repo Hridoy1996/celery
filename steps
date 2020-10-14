@@ -1,0 +1,22 @@
+# Install celery
+    pip install celery
+
+#Install RabbitMQ (Ubuntu Linux 20.04LTS)
+    sudo apt-get install rabbitmq-server
+    sudo systemctl enable rabbitmq-server
+    sudo systemctl start rabbitmq-server
+    uporer duita globally run korle hobe
+    sudo rabbitmqctl stop // eita console a
+celery activate korte eita lagbe. nahole egula queue te atka pore jabe
+celery --app=proj worker -l INFO
+
+eita version na dile flower kaj korbe na
+pip install celery~=4.4.7
+
+#celery -A proj beat -l INFO  
+flower on korte ei commpan
+flower -A proj --port=5555
+#nicher gula hudai onno kaj
+1. app2 run
+2. flower run 
+3 . celery run

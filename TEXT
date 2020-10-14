@@ -190,3 +190,11 @@ Trying again in 10.00 seconds... (5/100)
 [2020-10-13 09:52:18,769: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
 Trying again in 10.00 seconds... (5/100)
 
+[2020-10-13 18:56:37,189: WARNING/MainProcess] /home/tareq/Desktop/celery/venv/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2020-10-13 18:58:11,115: WARNING/MainProcess] /home/tareq/Desktop/celery/venv/lib/python3.8/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
