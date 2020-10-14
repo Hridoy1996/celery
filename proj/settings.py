@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app2',
     'flower',
     'django_celery_results',
+    'django_celery_beat',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,11 +130,14 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'tareqmahmudhridoy@gmail.com'
 
+
+CELERY_RESULT_BACKEND = 'django-db'
+'''
 CELERY_BEAT_SCHEDULE = {
     "scheduled_task": {
-        "task": "task1.tasks.add",
+        "task": "app1.tasks.add",
         "schedule": 5.0,
-        "args": (10, 10),
+        "args": (15, 10),
     }
 }
-CELERY_RESULT_BACKEND = 'django-db'
+'''
